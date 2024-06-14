@@ -1,0 +1,43 @@
+
+.console::-webkit-scrollbar {
+  width: 4px;               /* width of the entire scrollbar */
+  height: 4px;
+}
+
+.console::-webkit-scrollbar-track {
+  background: rgb(58, 58, 58);        /* color of the tracking area */
+}
+
+.console::-webkit-scrollbar-thumb {
+  background-color: rgb(26, 26, 94);    /* color of the scroll thumb */
+  border-radius: 2px;      /* creates padding around scroll thumb */
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.console{
+  width: 800px;
+  height: 500px;
+  background-color: rgba(20, 21, 34, 0.842);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
