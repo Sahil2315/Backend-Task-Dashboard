@@ -7,10 +7,10 @@ import Navbar from './Navbar'
 import { Routes, Route } from 'react-router-dom'
 import Mile1 from './Mile1'
 import Mile2 from './Mile2'
+import Loader from './Loader'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [connected, resetConn] = useState("Not Connected")
+  const [loaderDisplay, resetLoaderDisplay] = useState("")
   useEffect(()=> {
     let Initialize = async () => {
       let request = await fetch(baseAPI_URL + '/connect', {
@@ -21,7 +21,7 @@ function App() {
       })
       let response = await request.json()
       if(response.Connected){
-        resetConn("Connected")
+        resetLoaderDisplay("hidden")
       }
     }
     Initialize()
@@ -29,6 +29,7 @@ function App() {
 
   return (
     <>
+      <Loader display={loaderDisplay}/>
       <p className="text-2xl text-violet-400 text-center my-4">
         Wasserstoff Backend Interview Task
       </p>
